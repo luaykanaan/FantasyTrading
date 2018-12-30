@@ -1,9 +1,8 @@
 # Fantasy Trading Web App
 
-```
-This is app is fantasy based. You will be trading with wood, gems, elixir and coins.
-The project is not intended to focus on the trading, but rather on the technologies, libraries and third party services used to build the app. If your aim is to use the app for real-world trading, then look elsewhere. This app was designed as a fun/game like app with focus on stitching the app rather than how to real-world trade.
-```
+## Introduction
+This is app is fantasy based. You will be trading with wood, gems, elixir and coins. The project is not intended to focus on the trading. But rather on the technologies, libraries and third party services used to build the app. 
+If your aim is to use the app for real-world trading, then look elsewhere. This app was designed as a fun/game like app with focus on stitching the app rather than how to real-world trade.
 
 ![Alt text](/Screenshot-1.png?raw=true "Fantacy Trading Screenshot")
 
@@ -24,7 +23,9 @@ This app was created using:
 - ngx-charts
 
 ## Usage
-You need to add your own appsettings.json, appsettings.development.json and Program.cs files to the API project to be able to run the app. Specifically, you need to add the connection strings and the jwt secret key you will be using. Here is an example appsettings,json file:
+You need to add your own appsettings.json, appsettings.development.json and Program.cs files to the API project to be able to run the app. Specifically, you need to add the connection strings and the jwt secret key you will be using. And you have to change your sentry creditials in Program.cs.
+
+Here is an example appsettings,json file:
 ```json
 {
   "Logging": {
@@ -41,6 +42,7 @@ You need to add your own appsettings.json, appsettings.development.json and Prog
   "AllowedHosts": "*"
 }
 ```
+
 And this is how your Program.cs should look like:
 ```csharp
 using System;
