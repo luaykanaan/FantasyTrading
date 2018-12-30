@@ -1,0 +1,53 @@
+<mat-card class="register-card">
+  
+  <mat-card-header>
+    <mat-card-title>Register</mat-card-title>
+    <mat-card-subtitle>Please register so you can use this app</mat-card-subtitle>
+  </mat-card-header>
+  
+  <mat-card-content>
+    <form class="register-form" #registerForm="ngForm" id="registerForm">
+      
+      <mat-form-field class="w-100">
+        <input matInput placeholder="Username" [(ngModel)]="model.userName" name="userName" #userName="ngModel" required>
+        <mat-error *ngIf="userName.invalid && (userName.dirty || userName.touched)">Username is required</mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="w-100">
+        <input matInput name="email" id="email" #email="ngModel" type="email" [(ngModel)]="model.email" placeholder="Email" required email>
+        <mat-error *ngIf="email.invalid && (email.dirty || email.touched)">
+          <div *ngIf="email?.errors.required">
+            Email is required
+          </div>
+          <div *ngIf="email?.errors.email">
+            Email must be a valid email address
+          </div>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="w-100">
+        <input matInput placeholder="Password" [(ngModel)]="model.password" name="password" type="password" #password="ngModel" required minlength="8">
+        <mat-hint>Must include upper case, lower case, numbers and special characters</mat-hint>
+        <mat-error *ngIf="password.invalid && (password.dirty || password.touched)">
+          <div *ngIf="password?.errors.required">
+            Password is required
+          </div>
+          <div *ngIf="password?.errors.minlength">
+            Password must be at least 8 characters long.
+          </div>
+        </mat-error>
+      </mat-form-field>
+
+    </form>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button mat-raised-button color="primary" form="registerForm" (click)="register()" [disabled]="!registerForm.valid">Register</button>
+  </mat-card-actions>
+
+  <mat-card-footer>
+    <p>Already have an account? <a [routerLink]="" (click)="toggleRegister()">Click here to login.</a></p>
+  </mat-card-footer>
+
+
+</mat-card>

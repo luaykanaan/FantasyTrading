@@ -1,0 +1,16 @@
+
+.streams-container {
+    display: flex;
+    flex-direction: row;
+    padding: 1em;
+}
+
+.stream-row {
+    margin: 0;
+    padding: 0;
+    /* flex-wrap: wrap; */
+}
+
+.spinner-container {
+    margin: 0 auto;
+}

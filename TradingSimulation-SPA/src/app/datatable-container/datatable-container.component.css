@@ -1,0 +1,10 @@
+.datatable-container {
+    padding: 1em;
+    bottom: 1em;
+    width: 100%;
+    position: absolute;
+}
+
+table {
+    width: 100%;
+  }

@@ -1,0 +1,38 @@
+/* You can add global styles to this file, and also import other style files */
+@import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+@import "../node_modules/@angular/material/prebuilt-themes/deeppurple-amber.css";
+@import "../node_modules/ngx-toastr/toastr.css";
+@import '../node_modules/@fortawesome/fontawesome-free/css/all.min.css';
+
+/* override toastr default background colors */
+.toast-success {
+    background-color: #a5d6a7 !important;
+    color: #1b5e20 !important;
+  }
+  .toast-error {
+    background-color: #ef9a9a !important;
+    color: #b71c1c !important;
+  }
+  .toast-info {
+    background-color: #90caf9 !important;
+    color: #0d47a1 !important;
+  }
+  .toast-warning {
+    background-color: #ffe082 !important;
+    color: #ff6f00 !important;
+  }
+
+  /* general styling */
+body {
+    background-color: #fffafa;
+    margin: 0px;
+}
+
+.h-100 {
+    height: 100%;
+}
+
+.w-100 {
+    width: 100%;
+}
+

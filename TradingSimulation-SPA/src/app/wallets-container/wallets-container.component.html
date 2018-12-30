@@ -1,0 +1,58 @@
+<mat-card class="wallets-container">
+
+  <div *ngIf="isFetchingUser" class="spinner-container">
+    <mat-spinner color="warn" diameter=50></mat-spinner>
+  </div>
+
+  <div *ngIf="!isFetchingUser" class="content-container">
+
+    <div class="bag-container">
+      <div class="group-label">Your Bag</div>
+
+      <mat-card class="card">
+        <div class="card-header">
+            <i class="fas fa-tree"></i> Wood
+        </div>
+        <div class="card-content">
+            {{ woodWallet?.quantity | number:'1.0-1' }}
+        </div>
+      </mat-card>
+
+      <mat-card class="card">
+        <div class="card-header">
+            <i class="fas fa-gem"></i> Gems
+        </div>
+        <div class="card-content">
+            {{ gemsWallet?.quantity | number:'1.0-1' }}
+        </div>
+      </mat-card>
+
+      <mat-card class="card">
+        <div class="card-header">
+            <i class="fas fa-tint"></i> Elixir
+        </div>
+        <div class="card-content">
+            {{ elixirWallet?.quantity | number:'1.0-1' }}
+        </div>
+      </mat-card>
+    </div>
+    
+    <span class="fill-horizantal-space"></span>
+
+    <div class="coins-container">
+      <div class="group-label">Your Wallet</div>
+
+      <mat-card class="card">
+        <div class="card-header">
+            <i class="fas fa-coins"></i> Coins
+        </div>
+        <div class="card-content">
+            {{coinsWallet?.quantity | number:'1.0-1'}}
+        </div>
+      </mat-card>
+
+    </div>
+
+  </div>
+
+</mat-card>

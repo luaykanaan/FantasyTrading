@@ -1,0 +1,18 @@
+.fill-horizantal-space {
+    flex: 1 1 auto;
+}
+
+.main-navbar {
+    margin-bottom: 1em;
+}
+
+.special-button {
+    display: ruby;
+    background-color: transparent;
+    color:white;
+}
+
+.tooltip-background {
+    background-color: #ffd740!important;
+    color: #000000!important;
+}

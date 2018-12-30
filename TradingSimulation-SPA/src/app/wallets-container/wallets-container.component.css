@@ -1,0 +1,47 @@
+.wallets-container {
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-bottom: 1em;
+}
+
+::ng-deep .card.mat-card {
+    padding: 0;
+}
+
+.spinner-container {
+    margin: 0 auto;
+}
+
+.content-container, .bag-container, .coins-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.group-label {
+    text-align: left;
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+.card {
+    text-align: center;
+    margin-left: 2em;
+    min-width: 14em;
+}
+
+.card-header {
+    background-color: #f2f2f2;
+    font-size: 1.1em;
+    font-weight: 500;
+}
+
+.card-content {
+    padding: 0.8em;
+    font-size: 1.5em;
+    font-weight: 200;
+}
+
+.fill-horizantal-space {
+    flex: 1 1 auto;
+}

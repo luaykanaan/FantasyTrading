@@ -1,0 +1,17 @@
+<mat-toolbar color="primary" class="main-navbar">
+  <span>Fantacy Trading Web App</span>
+
+  <span class="fill-horizantal-space"></span>
+
+  <div *ngIf="isLoggedIn" dropdown class="dropdown">
+    <button dropdownToggle class="btn dropdown-toggle special-button" matTooltip="{{loggedInUser.userName}}" matTooltipClass="tooltip-background">
+        <ngx-avatar gravatarId="{{loggedInUser.email}}" name="{{loggedInUser.userName}}" size="50"></ngx-avatar>
+    </button>
+    <div class="dropdown-menu dropdown-menu-right" *dropdownMenu>
+      <a class="dropdown-item" href="#"><i class="fa fa-user"></i>   Edit Profile</a>
+      <div class="divider dropdown-divider"></div>
+      <a class="dropdown-item" href="#" (click)="logout()"><i class="fa fa-sign-out"></i>   Logout</a>
+    </div>
+  </div>
+
+</mat-toolbar>

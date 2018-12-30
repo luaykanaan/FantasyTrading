@@ -1,0 +1,14 @@
+<div class="mat-typography">
+
+    <app-navbar></app-navbar>
+
+    <app-login *ngIf="!isLoggedIn && !isDisplayRegister" (displayRegister)="onDisplayRegister($event)"></app-login>
+
+    <app-register *ngIf="!isLoggedIn && isDisplayRegister" (displayRegister)="onDisplayRegister($event)"></app-register>
+
+
+    <router-outlet *ngIf="isLoggedIn"></router-outlet>
+
+</div>
+
+

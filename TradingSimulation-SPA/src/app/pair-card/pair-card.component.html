@@ -1,0 +1,54 @@
+<mat-card class="card">
+
+    
+    <div class="row m-0 p-0">
+      <div class="col m-0 p-0">
+        <div class="w-100 text-center p-1 mini-head">You Have</div>
+        <div class="w-100 text-center p-3 mini-subtitle">{{resourceQuantity | number:'1.0-1'}} {{tradeTarget}}</div>
+      </div>
+      <div class="col m-0 p-0" matRipple matRippleDisabled="true">
+        <div class="w-100 text-center p-1 ratio-head">{{tradeTarget}} To Coins Ratio</div>
+        <div class="w-100 text-center p-1 ratio-subtitle">1 : {{ratio}}</div>
+      </div>
+      <div class="col m-0 p-0">
+        <div class="w-100 text-center p-1 mini-head">You Have</div>
+        <div class="w-100 text-center p-3 mini-subtitle">{{coinsQuantity | number:'1.0-1'}} Coins</div>
+      </div>
+    </div>
+
+    <div class="row m-0 p-0">
+      <div class="w-100 text-center explainer pt-4 pb-4">To buy one {{tradeTarget}}: you have to pay {{ratio}} coins</div>
+      <div class="w-100 text-center explainer pb-4">If you sell one {{tradeTarget}}: you get {{ratio}} coins</div>
+    </div>
+    
+    <div class="row m-0 p-0">
+      <div class="col m-0 p-0">
+          <button mat-flat-button color="primary" class="card-button"
+            [disabled]="coinsQuantity < ratio" 
+            (click)="executeTrade('Buy')">
+            <span class="action-span">Buy</span>
+            <span class="action-span">{{tradeTarget}}</span>
+          </button>
+      </div>
+      <div class="col-8 m-0 p-0">
+        <ngx-charts-area-chart
+          [results]="tradeStream"
+          [scheme]="{ domain: ['#F44336'] }"
+          [xAxis]="false"
+          [yAxis]="true"
+          [gradient]="true"
+          [yScaleMin]="minRatio"
+          [yScaleMax]="maxRatio"
+          [autoScale]="true">
+        </ngx-charts-area-chart>
+      </div>
+      <div class="col m-0 p-0">
+        <button mat-flat-button color="accent" class="card-button" 
+          [disabled]="resourceQuantity < 1"
+          (click)="executeTrade('Sell')">
+          <span class="action-span">Sell</span>
+          <span class="action-span">{{tradeTarget}}</span> 
+        </button>
+      </div>
+    </div>
+</mat-card>

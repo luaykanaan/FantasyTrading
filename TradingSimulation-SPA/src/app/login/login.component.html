@@ -1,0 +1,40 @@
+<mat-card class="login-card">
+  
+  <mat-card-header>
+    <mat-card-title>Login</mat-card-title>
+    <mat-card-subtitle>Please login with your credentials</mat-card-subtitle>
+  </mat-card-header>
+  
+  <mat-card-content>
+    <form class="login-form" #loginForm="ngForm" id="loginForm">
+      
+      <mat-form-field class="w-100">
+        <input matInput placeholder="Username Or Email" [(ngModel)]="model.userNameOrEmail" name="userNameOrEmail" #userNameOrEmail="ngModel" required>
+        <mat-error *ngIf="userNameOrEmail.invalid && (userNameOrEmail.dirty || userNameOrEmail.touched)">Field is <strong>required</strong></mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="w-100">
+        <input matInput placeholder="Password" [(ngModel)]="model.password" name="password" type="password" #password="ngModel" required minlength="8">
+        <mat-error *ngIf="password.invalid && (password.dirty || password.touched)">
+            <div *ngIf="password?.errors.required">
+              Password is <strong>required</strong>
+            </div>
+            <div *ngIf="password?.errors.minlength">
+              Password must be at least 8 characters long.
+            </div>
+        </mat-error>
+      </mat-form-field>
+
+    </form>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button mat-raised-button color="primary" form="loginForm" (click)="login()" [disabled]="!loginForm.valid">Login</button>
+  </mat-card-actions>
+
+  <mat-card-footer>
+    <p>Don't have an account yet? <a [routerLink]="" (click)="toggleRegister()">Click here to register.</a></p>
+  </mat-card-footer>
+
+
+</mat-card>

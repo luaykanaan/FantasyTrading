@@ -1,0 +1,13 @@
+.login-card {
+    position:fixed;
+    top: 50%;
+    left: 50%;
+    width:30em;
+    margin-top: -15em; /*set to a negative number 1/2 of your height*/
+    margin-left: -15em; /*set to a negative number 1/2 of your width*/
+    padding: 2em;
+}
+
+::ng-deep .mat-card-header-text {
+    margin: 0px !important; 
+  }
